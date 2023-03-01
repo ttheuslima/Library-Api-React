@@ -4,11 +4,11 @@ namespace Livraria_Api.Interfaces
 {
     public interface ILivroService
     {
-        List<Livro> GetLivros();
-        Livro Get_LivroPorId(int id);
-        Livro Get_LivroPorNomr(string nome);
-        Livro Get_LivroPorAutor(string nome);
-        void Post_CriarLivro();
-        void DeleteLivro();
+        Task<IEnumerable<Livro>> Get_Livros();
+        Task<Livro> Get_LivroPorId(int id);
+        Task<IEnumerable<Livro>> Get_LivroPorNome(string nome);
+        Task<IEnumerable<Livro>> Get_LivroPorAutor(string nome);
+        Task<Livro> Post_CriarLivro();
+        Task<Livro> Delete_Livro();
     }
 }
