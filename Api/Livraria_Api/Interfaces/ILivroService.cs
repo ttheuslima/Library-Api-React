@@ -7,8 +7,7 @@ namespace Livraria_Api.Interfaces
         Task<IEnumerable<Livro>> Get_Livros();
         Task<Livro> Get_LivroPorId(int id);
         Task<IEnumerable<Livro>> Get_LivroPorNome(string nome);
-        Task<IEnumerable<Livro>> Get_LivroPorAutor(string nome);
-        Task<Livro> Post_CriarLivro();
-        Task<Livro> Delete_Livro();
+        Task Post_CriarLivro(Livro livro);
+        Task Delete_Livro(Livro livro);
     }
 }
