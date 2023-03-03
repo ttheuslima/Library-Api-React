@@ -39,7 +39,7 @@ namespace Livraria_Api.Contexts
                 new {
                     LivroId = 1,
                     Nome = "Gulliver's Travels",
-                    DataLancamento = new DateTime(1726, 10, 28),
+                    AnoLancamento = "1726",
                     Edicao = 1,
                     Editora = "OXFORD BOOKWORMS",
                     AutorId = 1         
@@ -47,7 +47,7 @@ namespace Livraria_Api.Contexts
                 new {
                     LivroId = 2,
                     Nome = "Dr Jekyll & Mr Hyde",
-                    DataLancamento = new DateTime(1986, 01, 05),
+                    AnoLancamento = "1986",
                     Edicao = 3,
                     Editora = "RIchmond READERS",
                     AutorId = 2
@@ -55,7 +55,7 @@ namespace Livraria_Api.Contexts
                 new {
                     LivroId = 3,
                     Nome = "Harry Potter and the Philosopher's Stone",
-                    DataLancamento = new DateTime(1997, 06, 26),
+                    AnoLancamento = "1997",
                     Edicao = 2,
                     Editora = "Editora Rocco",
                     AutorId = 3
