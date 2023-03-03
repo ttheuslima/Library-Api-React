@@ -4,6 +4,7 @@ using Livraria_Api.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Livraria_Api.Migrations
 {
     [DbContext(typeof(LivrariaContext))]
-    partial class LivrariaContextModelSnapshot : ModelSnapshot
+    [Migration("20230303124227_CriacaoTabelasAutorLivro")]
+    partial class CriacaoTabelasAutorLivro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,23 +41,6 @@ namespace Livraria_Api.Migrations
                     b.HasKey("AutorId");
 
                     b.ToTable("Autores");
-
-                    b.HasData(
-                        new
-                        {
-                            AutorId = 1,
-                            Nome = "JONATHAN SWIFT"
-                        },
-                        new
-                        {
-                            AutorId = 2,
-                            Nome = "ROBERT LOUIS STEVERSON"
-                        },
-                        new
-                        {
-                            AutorId = 3,
-                            Nome = "J. K. Rowling"
-                        });
                 });
 
             modelBuilder.Entity("Livraria_Api.Entities.Livro", b =>
@@ -90,35 +76,6 @@ namespace Livraria_Api.Migrations
                     b.HasIndex("AutorId");
 
                     b.ToTable("Livros");
-
-                    b.HasData(
-                        new
-                        {
-                            LivroId = 1,
-                            AnoLancamento = "1726",
-                            AutorId = 1,
-                            Edicao = 1,
-                            Editora = "OXFORD BOOKWORMS",
-                            Nome = "Gulliver's Travels"
-                        },
-                        new
-                        {
-                            LivroId = 2,
-                            AnoLancamento = "1986",
-                            AutorId = 2,
-                            Edicao = 3,
-                            Editora = "RIchmond READERS",
-                            Nome = "Dr Jekyll & Mr Hyde"
-                        },
-                        new
-                        {
-                            LivroId = 3,
-                            AnoLancamento = "1997",
-                            AutorId = 3,
-                            Edicao = 2,
-                            Editora = "Editora Rocco",
-                            Nome = "Harry Potter and the Philosopher's Stone"
-                        });
                 });
 
             modelBuilder.Entity("Livraria_Api.Entities.Livro", b =>
