@@ -9,7 +9,7 @@ namespace Livraria_Api.Entities
         [StringLength(50)]
         public string Nome { get; set; }
         [Required]
-        public DateTime DataLancamento { get; set; }
+        public string AnoLancamento { get; set; }
         [Required]
         public int Edicao { get; set; }
         [Required]
