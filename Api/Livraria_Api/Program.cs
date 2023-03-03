@@ -1,5 +1,6 @@
 using Livraria_Api.Contexts;
 using Livraria_Api.Interfaces;
+using Livraria_Api.Middlewares;
 using Livraria_Api.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -32,6 +33,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware(typeof(ErrorMiddleware));
 
 app.MapControllers();
 
