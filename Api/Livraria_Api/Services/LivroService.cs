@@ -17,21 +17,14 @@ namespace Livraria_Api.Services
 
         public async Task<IEnumerable<Livro>> Get_Livros()
         {
-            try
-            {
-                return await _context.Livros.Include(x => x.Autor)
-                                            .ToListAsync();
-            }
-            catch (System.Exception)
-            {
-                
-                throw;
-            }
+            return await _context.Livros.Include(x => x.Autor)
+                                        .ToListAsync();
         }
 
         public async Task<Livro> Get_LivroPorId(int id)
         {
-            return await _context.Livros.Include(i => i.Autor).FirstOrDefaultAsync(l => l.LivroId == id);
+            return await _context.Livros.Include(i => i.Autor)
+                                        .FirstOrDefaultAsync(l => l.LivroId == id);
         }
 
         public async Task<IEnumerable<Livro>> Get_LivroPorNome(string nome)
