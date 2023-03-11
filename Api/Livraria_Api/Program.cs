@@ -1,3 +1,4 @@
+
 using Livraria_Api.Contexts;
 using Livraria_Api.Interfaces;
 using Livraria_Api.Middlewares;
@@ -24,6 +25,10 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 builder.Services.AddDbContext<LivrariaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
+//Container de Teste unitário.
+// builder.Services.AddDbContext<LivrariaContext>(opt =>
+//     opt.UseInMemoryDatabase("ToDoLivrariaTest"));
 
 builder.Services.AddControllers();
 // Adicionar os serviços
