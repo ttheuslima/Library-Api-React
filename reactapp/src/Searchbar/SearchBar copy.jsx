@@ -48,16 +48,15 @@ function SearchBar({ placeholder }) {
           {filteredData.length != 0 && (
           <div className="dataResult">
             {filteredData.slice(0, 15).map((value, key) => {
-              
+               
               return (
-                <a className="dataItem"  href={value.link} target="_blanks">
-                  <p onClick={completeInput}id={key}>{value.title}</p>
+                <a onClick={completeInput} className="dataItem" href={value.link} target="_blanks">
+                  <p>{value.title}</p>
+                  
                 </a>
               );
-              function completeInput (value){
-                alert('oi')
-                setfilteredData(value.title);
-                // setWordEntered(value.title);
+              function completeInput (){
+                setWordEntered(value.title);
 
               }
             })}
