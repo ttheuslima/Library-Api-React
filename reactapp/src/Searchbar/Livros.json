@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "autor":"Jennifer Niven",
+        "name": "Por Lugares Incriveis",
+        "image": "https://m.media-amazon.com/images/I/510HCDDGb3L._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+        "price": 60
+    },
+    {
+        "id": 1,
+        "autor":"it a coisa",
+        "name": "A revolucao dos bichos",
+        "image": "https://m.media-amazon.com/images/I/51z0s3GcvwL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+        "price": 45
+    }, 
+    {
+        "id": 1,
+        "autor":"Coolen Hover",
+        "name": "É assim que acaba",
+        "image": "https://m.media-amazon.com/images/I/51i7kH+rh9L._SY344_BO1,204,203,200_.jpg",
+        "price": 30
+    },
+    {
+        "id": 1,
+        "autor":"Coolen Hover",
+        "name": "É assim que começa",
+        "image": "https://m.media-amazon.com/images/I/51jiQtSEwDL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+        "price": 80
+    },
+    {
+        "id": 1,
+        "autor":"Charlie Donlea",
+        "name": "A garota do Lago",
+        "image": "https://m.media-amazon.com/images/I/516VOgxwg2L._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+        "price": 80
+    }
+
+    
+]

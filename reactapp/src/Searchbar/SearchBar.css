@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+
+
+ header{
+  
+    width:100%;
+    height:20vh;
+    border:none;
+    /* justify-content: center;
+    align-items: center; */
+    /* font-family: "Nunito", sans-serif; */
+    /* background-image: linear-gradient(90deg, #410076, #8820dd); */
+}
+/*
+.search input{
+    background-color: white;
+  border: 0;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 300px;
+}
+.searchInputs{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 80%;
+}
+header input{
+    height:60%;
+    width: 60%;
+    border: 3px solid black;
+}
+header input:focus{
+ outline: none;
+}
+input::-webkit-input-placeholder{
+    font-size: 1.8rem;
+    padding: 2%;
+    color:#410076;
+    /* border: solid #8820dd; 
+}
+.searchIcon{
+    padding-bottom: 30px;
+    height: 38%;
+    width: 33px;
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+.searchIcon svg{
+    font-size: 35px;
+} */
+
+
+
+/* body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+  /* background-image: linear-gradient(90deg, #410076, #8820dd); 
+} */
+
+
+/*--------------------------------*/
+/* header{
+  background-color:white;
+} */
+#pesquisa{
+  
+  display: flex;
+  height: 8vh;
+  width: 25vw;
+  padding: 1%;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: rgba(19, 19, 19, 0.938);
+ 
+}
+#pesquisa::-webkit-search-cancel-button{
+  position: relative;
+ 
+  -webkit-appearance: none;
+  
+} 
+
+ .searchInputs {
+     /* margin-top: 105px;  */
+    display: flex;
+  }
+  
+  .search input {
+    background-color: white;
+    border: 0;
+    border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 18px;
+    padding: 15px;
+    height: 30px;
+    width: 300px;
+  }
+  
+  .searchIcon {
+    height: 30px;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  .searchIcon svg {
+    font-size: 35px;
+    position: absolute;
+    margin-right: 6.5%;
+    margin-top: 1.5%;
+  }
+  
+   .dataResult {
+    margin-top: 5%;
+    /* width: 340px; */
+    width:25.3%;
+    min-height: min-content;
+    max-height: 200px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+
+
+   
+    position: absolute;
+    z-index: 1;
+    
+  }  
+
+  .dataResult::-webkit-scrollbar{
+    display:none;
+  }  
+.dataResult .dataItem{
+  width:100%;
+  height:50px;
+  display: flex;
+  align-items: center;
+  color:black;
+
+}
+.dataResult .dataItem:hover{
+  background-color: pink;
+  cursor: pointer;
+}
+.dataItem p{
+  margin-left: 10px;
+}
+a{
+  text-decoration: none;
+}
+   align-self:hover{
+  background-color: lightgrey;
+} 
+#clearBtn{
+  cursor: pointer;
+}  

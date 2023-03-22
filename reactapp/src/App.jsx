@@ -4,6 +4,7 @@ import {RouterProvider, createBrowserRouter, createRoutesFromElements ,Route, Ou
 
 import {Home} from './Pages/Home/home'
 import {Testando} from './Pages/TestingPage/testing'
+import Carrousel from './Carrousel'
 
 
 export function App() {  
@@ -12,6 +13,7 @@ export function App() {
              <Route path="/" element={<Root/>}>
                 <Route index element={<Home/>}/>
                 <Route path="/testando" element={<Testando/>}></Route>
+                <Route path="/carrousel" element={<Carrousel/>}></Route>
             </Route>
     )
 );
