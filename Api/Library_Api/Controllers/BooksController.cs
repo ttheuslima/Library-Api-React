@@ -34,9 +34,6 @@ namespace Library_Api.Controllers
             return book is null ? NotFound() : Ok(book);
         }
 
-        //CreateTablesAuthorBook
-        //PopularTables
-
         [HttpGet("Book_By_Name")]
         public async Task<ActionResult<IAsyncEnumerable<Book>>> GetBookByName([FromQuery] string name)
         {
