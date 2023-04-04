@@ -1,8 +1,15 @@
+<<<<<<< HEAD:Api/Livraria_Api/Program.cs
 
 using Livraria_Api.Contexts;
 using Livraria_Api.Interfaces;
 using Livraria_Api.Middlewares;
 using Livraria_Api.Services;
+=======
+using Library_Api.Contexts;
+using Library_Api.Interfaces;
+using Library_Api.Middlewares;
+using Library_Api.Services;
+>>>>>>> 6bbb3790ce3d9e0754e7e5cc1f5f0204cca973d4:Api/Library_Api/Program.cs
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -24,8 +31,12 @@ builder.Services.AddCors(options =>
 
 
 // Add services to the container.
-builder.Services.AddDbContext<LivrariaContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+builder.Services.AddDbContext<LibraryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionPattern")));
+
+//Container de Teste unitário.
+// builder.Services.AddDbContext<LibraryContext>(opt =>
+//     opt.UseInMemoryDatabase("ToDoLibraryTest"));
 
 //Container de Teste unitário.
 // builder.Services.AddDbContext<LivrariaContext>(opt =>
@@ -33,12 +44,12 @@ builder.Services.AddDbContext<LivrariaContext>(options =>
 
 builder.Services.AddControllers();
 // Adicionar os serviços
-builder.Services.AddScoped<ILivroService, LivroService>();
+builder.Services.AddScoped<IBookService, BookService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => 
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Livraria.Api", Version = "v1" } );
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Library.Api", Version = "v1" } );
 });
 
 var app = builder.Build();

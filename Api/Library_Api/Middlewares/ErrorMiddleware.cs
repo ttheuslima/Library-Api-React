@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
-using Livraria_Api.Models;
+using Library_Api.Models;
 using Newtonsoft.Json;
 
-namespace Livraria_Api.Middlewares
+namespace Library_Api.Middlewares
 {
     public class ErrorMiddleware
     {
