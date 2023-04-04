@@ -1,15 +1,7 @@
-<<<<<<< HEAD:Api/Livraria_Api/Program.cs
-
-using Livraria_Api.Contexts;
-using Livraria_Api.Interfaces;
-using Livraria_Api.Middlewares;
-using Livraria_Api.Services;
-=======
 using Library_Api.Contexts;
 using Library_Api.Interfaces;
 using Library_Api.Middlewares;
 using Library_Api.Services;
->>>>>>> 6bbb3790ce3d9e0754e7e5cc1f5f0204cca973d4:Api/Library_Api/Program.cs
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
