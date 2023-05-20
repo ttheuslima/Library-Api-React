@@ -38,9 +38,9 @@ namespace Test
             _dbSet = new Mock<DbSet<Book>>();
             var asyncEnumerable = new TestAsyncEnumerable<Book>(sampleData);
             _dbSet.As<IAsyncEnumerable<Book>>().Setup(m => m.GetAsyncEnumerator(default)).Returns(asyncEnumerable.GetAsyncEnumerator(default));
-            _dbSet.As<IQueryable<Book>>().Setup(x => x.Provider).Returns(sampleData.Provider);
-            _dbSet.As<IQueryable<Book>>().Setup(x => x.Expression).Returns(sampleData.Expression);
-            _dbSet.As<IQueryable<Book>>().Setup(x => x.ElementType).Returns(sampleData.ElementType);
+            _dbSet.As<IQueryable<Book>>().Setup(x => x.Provider).Returns(new TestAsyncQueryProvider<Book>(sampleData.AsQueryable().Provider));
+            _dbSet.As<IQueryable<Book>>().Setup(x => x.Expression).Returns(sampleData.AsQueryable().Expression);
+            _dbSet.As<IQueryable<Book>>().Setup(x => x.ElementType).Returns(sampleData.AsQueryable().ElementType);
             _dbSet.As<IQueryable<Book>>().Setup(x => x.GetEnumerator()).Returns(sampleData.GetEnumerator());
 
             _mockContext = new Mock<LibraryContext>();
@@ -52,10 +52,19 @@ namespace Test
         [Test]
         public async Task Test1AsyncGetBooksAsync_Should_Return_Total_Books()
         {
-             var result = await _service.Get_Books();
+            var result = await _service.Get_Books();
 
-             Assert.IsNotNull(result);
-             Assert.AreEqual(1, result.Count());
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Count());
+        }
+
+        [Test]
+        public async Task Test2AsyncGet_BookById_Should_Return_A_Book_By_Id()
+        {
+            var result = await _service.Get_BookById(1);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.BookId);
         }
     }
 }
