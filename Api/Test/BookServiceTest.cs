@@ -23,7 +23,7 @@ namespace Test
         {
             var sampleData = new List<Book>
             {
-                // Initialize your test data
+                // Initialize my test data
                 new Book { BookId = 1,
                     Name = "Gulliver's Travels",
                     YearLauch = "1726",
@@ -50,11 +50,12 @@ namespace Test
         }
 
         [Test]
-        public async Task Test1AsyncGetTotalBooksAsync_Should_Return_Total_Books()
+        public async Task Test1AsyncGetBooksAsync_Should_Return_Total_Books()
         {
              var result = await _service.Get_Books();
 
              Assert.IsNotNull(result);
+             Assert.AreEqual(1, result.Count());
         }
     }
 }
