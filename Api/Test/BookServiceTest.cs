@@ -66,5 +66,14 @@ namespace Test
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.BookId);
         }
+
+        [Test]
+        public async Task Test3AsyncGet_BookByName_Should_Return_A_Book_By_Name()
+        {
+            var result = await _service.Get_BookByName("Gulliver's Travels") as List<Book>;
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Gulliver's Travels", result[0].Name);
+        }
     }
 }
