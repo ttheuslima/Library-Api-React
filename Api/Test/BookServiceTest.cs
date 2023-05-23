@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Library_Api.Contexts;
 using Library_Api.Entities;
@@ -74,6 +75,25 @@ namespace Test
 
             Assert.IsNotNull(result);
             Assert.AreEqual("Gulliver's Travels", result[0].Name);
+        }
+
+        [Test]
+        public async Task Test4AsyncPost_CreateBook_Should_AddAsync_Entity_To_DbContext()
+        {
+            var entity = new Book { BookId = 2,
+                                    Name = "it a coisa",
+                                    YearLauch = "2014",
+                                    Edition = 1,
+                                    PublishingCompany = "Suma",
+                                    UrlWebImg = "https://m.media-amazon.com/images/I/51z0s3GcvwL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+                                    Price = 45M,
+                                    Author = new Author { AuthorId = 2,
+                                    Name = "Stephen King" } };
+
+            await _service.Post_CreateBook(entity);
+
+            _dbSet.Verify(m => m.AddAsync(entity, It.IsAny<CancellationToken>()), Times.Once);
+            _mockContext.Verify(db => db.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }
