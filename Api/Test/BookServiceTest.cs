@@ -95,5 +95,15 @@ namespace Test
             _dbSet.Verify(m => m.AddAsync(entity, It.IsAny<CancellationToken>()), Times.Once);
             _mockContext.Verify(db => db.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
         }
+
+        [Test]
+        public async Task Test5AsyncDelete_Book_Should_Return_Delete_Entity()
+        {
+            var entity = await _service.Get_BookById(1);
+            await _service.Delete_Book(entity);
+
+            _dbSet.Verify(m => m.Remove(It.IsNotIn<Book>()), Times.Once);
+            _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
+        }
     }
 }
