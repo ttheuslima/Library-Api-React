@@ -8,7 +8,7 @@ namespace Library_Api.Contexts
         public LibraryContext() { }
         public LibraryContext(DbContextOptions<LibraryContext> options) : base (options) { }
 
-        public virtual DbSet<Author> Authoes { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
