@@ -1,18 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&display=swap');
-:root{
-    --hot: cyan;
-}
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
-}
-body{
-   background-color: #F2FFF2;
-    overflow-x: hidden; 
-
-}
-header{
+.header{
 
     background-color: olive;
     display:flex;
@@ -21,12 +7,12 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 2% 6% 2% 6%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white  ;
     /* padding: 0px 100px 0px 100px; */
 }
 
 
-header h1{
+.header h1{
     color: white;
     display: flex;
     /* margin-left: 6%; */
@@ -44,7 +30,7 @@ a,a:active{
  }
 
   
-header nav ul{
+.header nav ul{
     display: flex;
     flex-direction: row-reverse;
     width:fit-content;
@@ -56,7 +42,7 @@ header nav ul{
     margin-bottom: 3.5vw;
 
 }
-header nav ul input{
+.header nav ul input{
     display: flex;
     height: 8vh;
     width: 25vw;
@@ -66,7 +52,7 @@ header nav ul input{
     font-size: 1.2rem;
     color: rgba(19, 19, 19, 0.938);
 }
- header nav ul input::-webkit-search-cancel-button{
+ .header nav ul input::-webkit-search-cancel-button{
     position: relative;
    
     -webkit-appearance: none;
@@ -91,53 +77,6 @@ header nav ul input{
     width: 100px;
     height: 100px;
     border-radius: 100px;
-}
-
-
-
-/* header nav ul button{
-     margin-top: 6%; 
-    background-color: #F2FFF2;
-    width: 6vw;
-    height: 6vh;
-    border-radius: 9px;
-    transition: 0.5s;
-}
-header nav ul button:hover{ 
-    background-color :white;
     cursor:pointer;
-} */
-
-
-main{
-    background-color: #F2F2F2;
-    padding:5% 10% 0% 10%;
-    min-width: 100%;
-    height: auto;
-}
-.livros{
-    background-color: #Fff;
-    box-shadow: rgb(0 0 0) 0px 3px 10px -5px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    height: 100%;
-}
-.cards{
-    height:100%;
-    width: 100%;
-    background-color: gray;
-    margin:3%;
-    padding:3%;
-    display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: row;    
-    align-items: center;
-    justify-content: center;
-
-
 }
 

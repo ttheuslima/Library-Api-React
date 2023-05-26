@@ -16,19 +16,19 @@
 
 .container{
     max-width: 75vw;
-
 }
-.container .logo{
+/* .container .logo{
     margin-left: 8%;
 }
 .container .logo img{
     border-radius: 10px;
-}
+} */
 .container .carousel{
     box-shadow: rgb(0 0 0) 0px 3px 10px -5px;
     display:flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    height:30%;
 
 }
 .container .carousel::-webkit-scrollbar{
@@ -37,38 +37,56 @@
 .container .carousel .item{
     
     background-color: white;
-    margin: 10px;
-    padding: 10px;
+    margin: 2%;
+    padding: 2%;
     padding-left: 2%;
-    width:280px;
     border-radius: 16px;
-    flex:none;
+    /* flex:none; */
+    display: flex;
+    flex-direction: column ; 
+    height:20em;
 }
 
 .container .carousel .item .image img{
-    width:100%;
-    height: 100%;
-    object-fit: cover;
+    /* width:100%; */
+    /* height: 10%; */
+    height:10em;
+    width:10em;
+     /* height:200px; */
+     /* width:200px; */
 }
 .container .carousel .item .info{
-    height: 140px;
+    height: 10%;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+ 
+    
 }
 .container .carousel .item .info span{
     display:block;
     text-align: center;
     color: #1e1e1e;
-    padding:5px;
+    padding:2%;
     border-radius: 10px;
 }
+
 .container .carousel .item .info .name{
     font-size:1.2rem;
+    height:100%;
+    width:100%;
     font-weight: bold;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     color: #00a8fb;
+    margin-bottom: 5%;
+    /* background-color: #e81a5d; */
 }
+.container .carousel .item .info .autor{
+    margin-top:10%;
+}
+
+
+
 .container .carousel .item .info .oldPrice{
     font-size:0.8rem;
     text-decoration: line-through;
@@ -76,7 +94,7 @@
     color:#e81a5d
 }
 .container .carousel .item .info .price{
-    margin-top: 10px;
+    margin-top: 2%;
     font-size:1.2rem;
     font-weight: bold;
     background-color: #ff7e3b;

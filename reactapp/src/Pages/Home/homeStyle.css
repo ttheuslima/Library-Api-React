@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&display=swap');
+:root{
+    --hot: cyan;
+}
+    
+body{
+   background-color: #F2FFF2;
+    overflow-x: hidden; 
+
+}
+
+main{
+    background-color: #F2F2F2;
+    padding:5% 10% 5% 10%;
+    min-width: 100%;
+    height: auto;
+}
+

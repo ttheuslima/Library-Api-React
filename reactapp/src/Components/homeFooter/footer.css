@@ -1,0 +1,11 @@
+.footer{
+    border-top: 0.1px solid black;
+    background-color: black;
+    height:30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+

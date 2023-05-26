@@ -11,7 +11,9 @@ function SearchBar({ placeholder }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5173/static/Livros.json")
+    // fetch("http://localhost:5173/static/Livros.json")
+    fetch("http://localhost:5192/api/Livros/Todos_Livros")
+    // fetch("http://localhost:5192/api/Livros/Livro_Por_Nome?")
       .then((response) => response.json())
       .then(setData);
   }, []);
@@ -20,7 +22,7 @@ function SearchBar({ placeholder }) {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
+      return value.nome.toLowerCase().includes(searchWord.toLowerCase());
     });
     if (searchWord === "") {
       setfilteredData([]);
@@ -36,7 +38,7 @@ function SearchBar({ placeholder }) {
   
   return (
     <div className="search">
-      <header>
+     
         <div className="searchInputs">
           <input
             id="pesquisa"
@@ -51,14 +53,15 @@ function SearchBar({ placeholder }) {
                
               return (
                 <a onClick={completeInput} className="dataItem" href={value.link} target="_blanks">
-                  <p>{value.title}</p>
+                  <p>{value.nome}</p>
                   
                 </a>
               );
               function completeInput (){
-                setWordEntered(value.title);
-
+                setWordEntered(value.nome);
+                value.tilte = "";
               }
+
             })}
           </div>
         )}
@@ -72,7 +75,6 @@ function SearchBar({ placeholder }) {
           </div>
         </div>
         
-      </header>
     </div>
   );
 }
