@@ -32,6 +32,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 builder.Services.AddControllers();
 // Adicionar os serviços
+builder.Services.AddScoped<IAuthenticate, AuthenticateService>();
 builder.Services.AddScoped<IBookService, BookService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
