@@ -2,6 +2,7 @@ using Library_Api.Contexts;
 using Library_Api.Interfaces;
 using Library_Api.Middlewares;
 using Library_Api.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -26,13 +27,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionPattern")));
 
-//Container de Teste unitário.
-// builder.Services.AddDbContext<LibraryContext>(opt =>
-//     opt.UseInMemoryDatabase("ToDoLibraryTest"));
-
-//Container de Teste unitário.
-// builder.Services.AddDbContext<LivrariaContext>(opt =>
-//     opt.UseInMemoryDatabase("ToDoLivrariaTest"));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+        .AddEntityFrameworkStores<LibraryContext>();
 
 builder.Services.AddControllers();
 // Adicionar os serviços
